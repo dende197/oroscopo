@@ -3,7 +3,7 @@
    Zodiac data, dynamic rendering, interactions
    ============================================= */
 
-const zodiacData = {
+const ZODIAC_SIGNS = {
     ariete: {
         name: 'Ariete',
         dates: '21 Mar – 19 Apr',
