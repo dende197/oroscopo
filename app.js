@@ -3,13 +3,12 @@
    Zodiac data, dynamic rendering, interactions
    ============================================= */
 
-// ─── Zodiac Data ─────────────────────────────────
-const ZODIAC_SIGNS = {
+const zodiacData = {
     ariete: {
         name: 'Ariete',
         dates: '21 Mar – 19 Apr',
         glyph: '♈',
-        image: '/assets/zodiac/ariete.png',
+        image: 'assets/zodiac/ariete.png',
         mantra: 'Coraggio',
         forecast: [
             'La giornata si accende con un\'energia dirompente, Andrea. Il tuo spirito pionieristico ti spinge verso nuove conquiste, sfidando limiti che credevi insuperabili. Un incontro inaspettato nel primo pomeriggio potrebbe rivelare un\'alleanza strategica.',
@@ -26,7 +25,7 @@ const ZODIAC_SIGNS = {
         name: 'Toro',
         dates: '20 Apr – 20 Mag',
         glyph: '♉',
-        image: '/assets/zodiac/toro.png',
+        image: 'assets/zodiac/toro.png',
         mantra: 'Stabilità',
         forecast: [
             'La mattina si apre con una sensazione di solidità interiore, Andrea. Ogni passo che fai oggi costruisce fondamenta durature. Un progetto che sembrava arenato riprende slancio grazie alla tua perseveranza innata e alla capacità di vedere il valore nel tempo.',
@@ -43,7 +42,7 @@ const ZODIAC_SIGNS = {
         name: 'Gemelli',
         dates: '21 Mag – 20 Giu',
         glyph: '♊',
-        image: '/assets/zodiac/gemelli.png',
+        image: 'assets/zodiac/gemelli.png',
         mantra: 'Comunicazione',
         forecast: [
             'La tua mente è un caleidoscopio di idee brillanti oggi, Andrea. Mercurio amplifica la tua naturale eloquenza, trasformando ogni conversazione in un\'opportunità. Un messaggio inatteso potrebbe cambiare la prospettiva su una situazione lavorativa.',
@@ -60,7 +59,7 @@ const ZODIAC_SIGNS = {
         name: 'Cancro',
         dates: '21 Giu – 22 Lug',
         glyph: '♋',
-        image: '/assets/zodiac/cancro.png',
+        image: 'assets/zodiac/cancro.png',
         mantra: 'Intuizione',
         forecast: [
             'La Luna, tua governatrice, illumina sentieri nascosti questa mattina, Andrea. La tua sensibilità diventa un radar infallibile per cogliere ciò che gli altri non vedono. Un\'emozione repressa emerge, portando con sé la chiave per una guarigione profonda.',
@@ -77,7 +76,7 @@ const ZODIAC_SIGNS = {
         name: 'Leone',
         dates: '23 Lug – 22 Ago',
         glyph: '♌',
-        image: '/assets/zodiac/leone.png',
+        image: 'assets/zodiac/leone.png',
         mantra: 'Magnetismo',
         forecast: [
             'Il Sole, tuo astro guida, ti incorona di luce regale questa mattina, Andrea. La tua presenza magnetica attira opportunità e ammiratori. Un palcoscenico inaspettato si presenta: è il momento di brillare senza riserve e mostrare al mondo il tuo talento unico.',
@@ -94,7 +93,7 @@ const ZODIAC_SIGNS = {
         name: 'Vergine',
         dates: '23 Ago – 22 Set',
         glyph: '♍',
-        image: '/assets/zodiac/vergine.png',
+        image: 'assets/zodiac/vergine.png',
         mantra: 'Perfezione',
         forecast: [
             'La tua mente analitica è in stato di grazia questa mattina, Andrea. Ogni dettaglio racconta una storia, ogni schema rivela un\'opportunità nascosta. Un progetto complesso si semplifica sotto il tuo sguardo metodico, portando risultati che stupiscono anche te.',
@@ -111,7 +110,7 @@ const ZODIAC_SIGNS = {
         name: 'Bilancia',
         dates: '23 Set – 22 Ott',
         glyph: '♎',
-        image: '/assets/zodiac/bilancia.png',
+        image: 'assets/zodiac/bilancia.png',
         mantra: 'Armonia',
         forecast: [
             'L\'equilibrio diventa la tua superpotenza questa mattina, Andrea. Dove gli altri vedono conflitto, tu trovi sintesi. Una situazione diplomatica delicata si risolve grazie alla tua capacità innata di vedere entrambi i lati, portando pace e nuove possibilità.',
@@ -128,11 +127,11 @@ const ZODIAC_SIGNS = {
         name: 'Scorpione',
         dates: '23 Ott – 21 Nov',
         glyph: '♏',
-        image: '/assets/zodiac/scorpione.png',
+        image: 'assets/zodiac/scorpione.png',
         mantra: 'Trasformazione',
         forecast: [
             'Senti il bisogno di scavare a fondo nelle situazioni, Andrea. Nulla sfugge al tuo sguardo acuto questa mattina. Un segreto o un enigma lavorativo viene finalmente svelato grazie alla tua intuizione profonda, portando chiarezza e nuove opportunità.',
-            'La giornata favorisce l\'introspezione e la connessione con la tua forza interiore. Non temere i cambiamenti, abbracciali come parte della tua evoluzione personale.'
+            'La giornata favorisce l\'introspezione e la connessione con la tua força interiore. Non temere i cambiamenti, abbracciali come parte della tua evoluzione personale.'
         ],
         vitality: '89%',
         affinitySign: 'Cancro',
@@ -145,7 +144,7 @@ const ZODIAC_SIGNS = {
         name: 'Sagittario',
         dates: '22 Nov – 21 Dic',
         glyph: '♐',
-        image: '/assets/zodiac/sagittario.png',
+        image: 'assets/zodiac/sagittario.png',
         mantra: 'Avventura',
         forecast: [
             'L\'orizzonte si espande senza limiti questa mattina, Andrea. Giove amplifica la tua sete di conoscenza e il desiderio di superare ogni confine. Un\'opportunità di viaggio o formazione si materializza, promettendo crescita e nuove prospettive illuminanti.',
@@ -162,7 +161,7 @@ const ZODIAC_SIGNS = {
         name: 'Capricorno',
         dates: '22 Dic – 19 Gen',
         glyph: '♑',
-        image: '/assets/zodiac/capricorno.png',
+        image: 'assets/zodiac/capricorno.png',
         mantra: 'Ambizione',
         forecast: [
             'Saturno conferma la tua disciplina incrollabile questa mattina, Andrea. Ogni sacrificio passato comincia a dare i suoi frutti. Una posizione di responsabilità si profila all\'orizzonte, riconoscendo il tuo impegno costante e la tua integrità professionale.',
@@ -179,7 +178,7 @@ const ZODIAC_SIGNS = {
         name: 'Acquario',
         dates: '20 Gen – 18 Feb',
         glyph: '♒',
-        image: '/assets/zodiac/acquario.png',
+        image: 'assets/zodiac/acquario.png',
         mantra: 'Innovazione',
         forecast: [
             'Un lampo di genialità attraversa la tua mente questa mattina, Andrea. Urano stimola la tua natura visionaria, portando idee che sembrano venire dal futuro. Un approccio non convenzionale a un problema familiare rivela soluzioni che nessuno aveva considerato.',
@@ -196,7 +195,7 @@ const ZODIAC_SIGNS = {
         name: 'Pesci',
         dates: '19 Feb – 20 Mar',
         glyph: '♓',
-        image: '/assets/zodiac/pesci.png',
+        image: 'assets/zodiac/pesci.png',
         mantra: 'Empatia',
         forecast: [
             'Le correnti cosmiche ti trasportano in acque profonde e rivelatrici questa mattina, Andrea. Nettuno amplifica la tua sensibilità artistica e la capacità di percepire ciò che resta invisibile agli altri. Un sogno ricorrente potrebbe contenere un messaggio importante.',
