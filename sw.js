@@ -33,7 +33,13 @@ self.addEventListener("fetch", (event) => {
         return cached;
       }
 
-      return fetch(event.request).catch(() => caches.match("./index.html"));
+      return fetch(event.request).catch(() => {
+        if (event.request.mode === "navigate") {
+          return caches.match("./index.html");
+        }
+
+        return Response.error();
+      });
     })
   );
 });
