@@ -1,0 +1,15 @@
+{
+  "name": "Astralis",
+  "short_name": "Astralis",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f0e9f5",
+  "theme_color": "#2d2344",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
