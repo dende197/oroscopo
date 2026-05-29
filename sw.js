@@ -38,7 +38,10 @@ self.addEventListener("fetch", (event) => {
           return caches.match("./index.html");
         }
 
-        return Response.error();
+        return new Response("Offline and no cached response is available.", {
+          status: 504,
+          statusText: "Offline",
+        });
       });
     })
   );
