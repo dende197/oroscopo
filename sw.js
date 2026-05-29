@@ -39,8 +39,8 @@ self.addEventListener("fetch", (event) => {
         }
 
         return new Response("Offline and no cached response is available.", {
-          status: 504,
-          statusText: "Offline",
+          status: 503,
+          statusText: "Service Unavailable",
         });
       });
     })
