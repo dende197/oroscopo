@@ -453,9 +453,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ─── Service Worker Registration ────────────────
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('SW registered:', reg.scope))
-            .catch(err => console.warn('SW registration failed:', err));
-    });
+    if (import.meta.env.DEV) {
+        // In development, automatically unregister service workers to avoid local caching issues
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+            for (const registration of registrations) {
+                registration.unregister();
+                console.log('SW unregistered in development mode.');
+            }
+        });
+    } else {
+        // In production, register the service worker using the correct base path
+        window.addEventListener('load', () => {
+            const swPath = `${import.meta.env.BASE_URL || '/'}sw.js`;
+            navigator.serviceWorker.register(swPath)
+                .then(reg => console.log('SW registered:', reg.scope))
+                .catch(err => console.warn('SW registration failed:', err));
+        });
+    }
 }
